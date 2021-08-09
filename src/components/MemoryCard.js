@@ -15,7 +15,7 @@ class MemoryCard extends React.Component{
     render() {
         return (
             <div className="MemoryCard">
-                <img src={logo} alt=""></img>
+                <img className="logo" src={logo} alt=""></img>
             </div>
         )
     }
