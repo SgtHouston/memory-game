@@ -4,36 +4,23 @@ import logo from "./logo-wrench.png"
 
 // Step 2 Code for Component
 class MemoryCard extends React.Component{
-    constructor () {
-        super()
-        this.state = {
-            isFlipped: false
-        }
-    }
-
-    clickHandler = () => {
-        this.setState ({
-            isFlipped: (!this.state.isFlipped)
-        })
-    }
-
 
     render() {
         
         let innerClass = "MemoryCard__inner";
 
-        if (this.state.isFlipped) {
+        if (this.props.isFlipped) {
             innerClass = "MemoryCard__inner flipped"
         }
         
         return (
-            <div className="MemoryCard" onClick={this.clickHandler}>
+            <div className="MemoryCard" onClick={this.props.clickHandler}>
                 <div className={innerClass}>
                     <div className="MemoryCard__back">
                         <img className="logo" src={logo} alt=""></img>
                     </div>
                     <div classname="MemoryCard__front">
-                        ∆
+                        {this.props.symbol}
                     </div>
                 </div>
             </div>
@@ -43,5 +30,5 @@ class MemoryCard extends React.Component{
 
 
 
-// Export component for use in app.js
+// Step 3 Export component for use in app.js
 export default MemoryCard
